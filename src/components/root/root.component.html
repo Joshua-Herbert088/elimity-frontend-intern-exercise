@@ -8,9 +8,9 @@
   <mat-card class="p-0" *ngIf="showTodos; else template">
     <mat-action-list class="p-0" [disableRipple]="true">
       <mat-list-item class="item" *ngFor="let todo of todos; let i = index">
-        <h3 matLine>{{ todo.label }}</h3>
-        <p matLine>{{ todo.timestamp | date: "medium" }}</p>
-        <button (click)="onClickDelete(i)" mat-icon-button>
+        <p matListItemTitle>{{ todo.label }}</p>
+        <p matListItemLine>{{ todo.timestamp | date: "medium" }}</p>
+        <button (click)="onClickDelete(i)" class="my-auto" matListItemMeta>
           <mat-icon>delete</mat-icon>
         </button>
       </mat-list-item>
